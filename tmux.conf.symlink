@@ -1,3 +1,18 @@
+# General
+
+# Setting the prefix from C-b to C-a
+set -g prefix C-a
+# Free the original Ctrl-b prefix keybinding
+unbind C-b
+#setting the delay between prefix and command
+set -s escape-time 1
+# Ensure that we can send Ctrl-A to other apps
+bind C-a send-prefix
+
+set -g default-terminal "screen-256color"
+set -g status-style fg=white,bg=black
+
+# Windows
 bind | split-window -L
 bind \ split-window -h
 bind - split-window -v
@@ -7,16 +22,16 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
+setw -g window-status-current-style fg=white,bold,bg=red
+setw -g window-style fg=colour246,bg=colour235
+setw -g window-active-style fg=colour254,bg=colour235
+set -g status-justify centre
+
+# Panes
 bind -r H resize-pane -L 5
 bind -r J resize-pane -D 5
 bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
+# Mouse
 set -g mouse on
-set -g default-terminal "screen-256color"
-set -g status-style fg=white,bg=black
-setw -g window-status-current-style fg=white,bold,bg=red
-setw -g window-style fg=colour246,bg=colour235
-setw -g window-active-style fg=colour254,bg=colour235
-
-
