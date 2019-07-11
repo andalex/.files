@@ -1,3 +1,6 @@
+execute pathogen#infect()
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+" Formatting
 syntax enable
 set tabstop=4
 set softtabstop=4
@@ -24,5 +27,10 @@ let g:netrw_liststyle=3
 let g:netrw_browse_split=4
 let g:netrw_altv=1
 let g:netrw_winsize=25
+" Leader
+" file saving
 
-
+augroup reload_vimrc
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END

@@ -8,10 +8,7 @@ alias gs='git status'
 alias gb='git branch -a'
 alias gl='git log'
 alias gr='git rebase -i HEAD~$1'
+alias gsync='git fetch upstream;git checkout upstream/master;git rebase upstream/master'
 
-alias ev='vi ~/.vimrc'
-alias ea='vi ~/.alias'
-alias ef='vi ~/.functions.sh'
-alias eh='vi ~/.hearsay'
-alias et='vi ~/.tmux.conf'
-alias ez='vi ~/.zshrc'
+## TMUX
+alias mux='tmux a -d || tmux new -s hss-development'

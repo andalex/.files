@@ -1,16 +1,23 @@
 #!/usr/bin/env bash
 
-DOTFILES=$HOME/dotfiles
+echo -e "\nCreating symlinks...\n"
 
-echo -e "\nCreating symlinks"
-echo "=============================="
-linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
-for file in $linkables ; do
-    target="$HOME/.$( basename $file '.symlink' )"
+dotfiles=(
+    "$PWD/.tmux.conf"
+    "$PWD/.vimrc"
+    "$PWD/git/.bashrc"
+    "$PWD/git/.gitconfig"
+    "$PWD/git/.gitignore_global"
+    "$PWD/git/.zshrc"
+    "$PWD/shell/.alias"
+)
+
+for file in "${dotfiles[@]}"; do
+    target="$PWD/test/$( basename $file )"
     if [ -e $target ]; then
         echo "~${target#$HOME} already exists... Skipping."
     else
-        echo "Creating symlink for $file"
+        echo "Creating symlink for $( basename $file ) in $target..."
         ln -s $file $target
     fi
 done

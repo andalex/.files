@@ -1,0 +1,1 @@
+/home/aanderson/dotfiles/git/.bashrc
