@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo -e "\nDownloading from github...\n"
 
-git clone https://github.com/andalex/dotfiles.git
+git clone git@github.com:andalex/dotfiles.git
 
 cd dotfiles
 
@@ -18,7 +18,7 @@ dotfiles=(
 )
 
 for file in "${dotfiles[@]}"; do
-    target="$PWD/test/$( basename $file )"
+    target="$HOME/$( basename $file )"
     if [ -e $target ]; then
         echo "~${target#$HOME} already exists... Skipping."
     else
