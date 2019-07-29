@@ -1,1 +1,0 @@
-/home/aanderson/dotfiles/git/.zshrc
