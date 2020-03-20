@@ -11,4 +11,4 @@ alias gr='git rebase -i HEAD~$1'
 alias gsync='git fetch upstream;git checkout upstream/master;git rebase upstream/master'
 
 ## TMUX
-alias mux='tmux a -d || tmux new -s hss-development'
+alias mux='tmux attach-session -t andalex-dev || tmux new-session -s andalex-dev'
