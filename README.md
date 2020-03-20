@@ -1,10 +1,49 @@
-# dotfiles
-Symlink based dotfiles. My workflow is to primarily use a remote machine running with tmux in combination with the vscode ssh client.
-The vim setup is decent because sometimes I use that.
+# Dotfiles
 
-## Installation:
-The install script will clone this repo and add all the symlinks for each dotfile.
+Install dotfiles from shell script.
+
+I do most of my work on a remote linux machine, using the vscode ssh client and tmux, occassionally vim.
+
+## Setup
+
+The install script will clone this repo, add all the symlinks for each dotfile, then install any packages.
 
 ```
 curl -o- https://raw.githubusercontent.com/andalex/dotfiles/master/install.sh | bash
 ```
+
+*or* 
+
+Clone the repo manully, then:
+
+```
+make install
+```
+
+## Configuration Files
+
+```
+├── .tmux.conf
+├── .vimrc
+├── git
+│   ├── .gitconfig
+│   └── .gitignore_global
+└── shell
+    ├── .alias
+    ├── .bashrc
+    └── .zshr
+```
+
+These files are symlinked to the following locations:
+```
+$HOME/.tmux.conf
+$HOME/.vimrc
+$HOME/.gitconfig
+$HOME/.gitignore_global
+$HOME/.alias
+$HOME/.bashrc
+```
+
+
+## Packages:
+* [NVM v0.34.0](https://github.com/nvm-sh/nvm)

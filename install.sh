@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
-echo -e "\nDownloading from github...\n"
+NVM_VERSION="v0.34.0"
 
-git clone git@github.com:andalex/dotfiles.git
+if [ ! -d './dotfiles' ]; then
+    echo -e "\nDownloading from github...\n"
+
+    git clone git@github.com:andalex/dotfiles.git
+fi
 
 cd dotfiles
 
@@ -14,7 +18,6 @@ dotfiles=(
     "$PWD/git/.gitignore_global"
     "$PWD/shell/.alias"
     "$PWD/shell/.bashrc"
-    "$PWD/shell/.zshrc"
 )
 
 for file in "${dotfiles[@]}"; do
@@ -26,3 +29,13 @@ for file in "${dotfiles[@]}"; do
         ln -s $file $target
     fi
 done
+
+
+echo -e "\n installing NVM..."
+
+curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | bash
+
+source "$HOME/.bashrc"
+
+# should return `nvm` if installed properly. nvm is a sourced shell func, not an executable.
+command -v nvm | grep -q 'nvm' && echo 'NVM install successful'
