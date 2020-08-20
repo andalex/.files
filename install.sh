@@ -18,6 +18,7 @@ dotfiles=(
     "$PWD/git/.gitignore_global"
     "$PWD/shell/.alias"
     "$PWD/shell/.bashrc"
+    "$PWD/shell/.bash_profile"
 )
 
 for file in "${dotfiles[@]}"; do
