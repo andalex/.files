@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 NVM_VERSION="v0.34.0"
 
-if [ ! -d './dotfiles' ]; then
+if [ ! -d '~/dotfiles' ]; then
     echo -e "\nDownloading from github...\n"
 
     git clone git@github.com:andalex/dotfiles.git
