@@ -1,9 +1,5 @@
 # Dotfiles
 
-Install dotfiles from shell script.
-
-I do most of my work on a remote linux machine, using the vscode ssh client and tmux, occassionally vim.
-
 ## Setup
 
 The install script will clone this repo, add all the symlinks for each dotfile, then install any packages.
